@@ -37,7 +37,7 @@ describe("settings", () => {
       setupComplete: boolean;
     };
     expect(body.authMode).toBe("single");
-    expect(body.version).toBe("0.0.0");
+    expect(body.version).toBe("0.1.0");
     expect(body.hasSessionSecret).toBe(true);
     expect(body.setupComplete).toBe(true);
   });
@@ -52,7 +52,7 @@ describe("settings", () => {
       setupComplete: boolean;
     };
     expect(body.authMode).toBe("none");
-    expect(body.version).toBe("0.0.0");
+    expect(body.version).toBe("0.1.0");
     // requireAuth lazily provisions the instance admin first.
     expect(body.setupComplete).toBe(true);
   });

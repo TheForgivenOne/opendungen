@@ -14,7 +14,7 @@ function json(body: unknown, status = 200): Response {
 
 const INSTANCE = {
   authMode: "single",
-  version: "0.0.0",
+  version: "0.1.0",
   hasSessionSecret: true,
   setupComplete: true,
   rateLimitEnabled: true,

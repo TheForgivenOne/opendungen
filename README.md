@@ -156,3 +156,23 @@ HKDF — **rotating `SESSION_SECRET` invalidates all stored provider keys**
   is logged at boot.
 - `429 rate_limited` on login/setup: wait for the `Retry-After`
   window, or set `RATE_LIMIT_ENABLED=false` behind your own proxy.
+
+## License
+
+OpenDungen is released under the Apache-2.0 license. See
+[LICENSE](LICENSE) for details.
+
+## Security
+
+To report a vulnerability, see [SECURITY.md](SECURITY.md).
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
+## Screenshots
+
+![OpenDungen story view](docs/screenshot.png)
+
+<!-- TODO: replace docs/screenshot.png with a real screenshot
+     of a play session before public announcement -->

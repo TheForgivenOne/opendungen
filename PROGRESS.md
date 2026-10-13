@@ -1,5 +1,20 @@
 # OpenDungen — Progress
 
+## Release: v0.1.0
+
+Ship prep completed in Phase S. Checklist (source: docs/RELEASE.md):
+
+- [x] LICENSE present (Apache-2.0)
+- [x] SECURITY.md present (vulnerability reporting, scope, supported versions)
+- [x] CHANGELOG.md present with [0.1.0] section
+- [x] README has License, Security, Changelog, Screenshots sections
+- [~] docs/screenshot.png is a 1x1 placeholder; real screenshot needed before announcement
+- [x] Version is `0.1.0` in root, apps/api, apps/web package.json
+- [x] `GET /api/settings/instance` reads version from package.json (returns `"0.1.0"`)
+- [ ] Git tag v0.1.0 (user action, not yet pushed)
+- [ ] GitHub release published (user action)
+
+
 ## Done
 - Phase 0: workspace scaffold, Hono worker, Vite app, Drizzle+libSQL
   dual driver, CI, docs stub.
@@ -195,6 +210,7 @@
   adds churn with zero benefit).
 
 ## Known issues
+- docs/screenshot.png is a placeholder; replace before public announcement.
 - Phase P eval (gpt-oss:20b via Ollama Cloud, temp 0.8, 2026-10-13):
   length compliance is partial — first pass word counts:
   fantasy 100, scifi 55, dialogue 206, failure 188, continue 123,

@@ -22,6 +22,8 @@ jobs:
       - run: pnpm -r format
       - run: pnpm -r test
       - run: pnpm -r build
+      - run: pnpm audit --prod --audit-level=high
+        continue-on-error: true
 
   e2e:
     runs-on: ubuntu-latest
