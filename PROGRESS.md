@@ -209,6 +209,11 @@ Ship prep completed in Phase S. Checklist (source: docs/RELEASE.md):
   scope); all *.test.ts suites (cohesive per-concern, splitting
   adds churn with zero benefit).
 
+- Phase C: code hygiene. Source comments no longer reference build
+  phases, specs, prompts, or agent reasoning; the script runner's
+  default log sink now routes through log.ts; four unused exports
+  and one unused type removed. No behavior changes.
+
 ## Known issues
 - docs/screenshot.png is a placeholder; replace before public announcement.
 - Phase P eval (gpt-oss:20b via Ollama Cloud, temp 0.8, 2026-10-13):
@@ -258,6 +263,11 @@ Ship prep completed in Phase S. Checklist (source: docs/RELEASE.md):
   Ollama instead.
 
 ## Decisions
+- Comments explain why, not what.
+- No phase/spec/prompt references in source comments.
+- TODOs live in docs/TECH_DEBT.md.
+- Unused exports removed unless marked "Exported for tests."
+- Prompt text in prompts.ts is verbatim by design.
 - Phase E: E2E is Playwright, Chromium only, capped at 25 tests.
 - Phase E: E2E uses a stub provider, never real APIs.
 - Phase E: fresh SQLite per test file (temp dir, removed after).

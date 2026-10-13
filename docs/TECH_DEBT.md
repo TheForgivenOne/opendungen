@@ -1,12 +1,18 @@
 # Technical Debt
 
-Discovered: 2026-10-13. Audit phase D.
+Discovered: 2026-10-13. Audit phase D. Updated: phase C (code hygiene).
 
 Priority tiers: P0 (blocks v1) · P1 (fix before v1.1) · P2 (schedule) · P3 (nice-to-have).
 
 ## Summary
 
-21 items: 2 P0, 3 P1, 7 P2, 9 P3.
+21 items: 2 P0, 3 P1, 7 P2, 9 P3. Phase C closed 2 P3 items.
+
+Phase C (2026-10-13) resolved 2: the phase/history comment-noise P3
+(63 hits stripped from source comments; conventions now in
+ARCHITECTURE.md) and the script-runner raw-`console.debug` sink P3.
+There are no TODO/FIXME/HACK/XXX markers in the source tree, so there
+is no debt to mirror here.
 
 Phase F (2026-10-13) resolved 4: drizzle CVE bumped, scenario
 seeding fixed, "Coming soon" removed, and the empty-completion P3
@@ -94,15 +100,9 @@ coincidence, or documented by-design mirroring.
 
 ## P3 — Nice-to-have
 
-- [ ] **Phase/history comment noise (63 hits)** — `apps/api/src/db/schema.ts:14` (+62 more)
-      What: 33 hits in apps/api + 30 in apps/web matching `Phase N` / `§N` / `previously` / `I chose`, e.g. `// Phase 2b: user scripts…`, `// Persistent top bar (Phase 6b)…`, `// previously suggested label…`.
-      Why it matters: Archaeology comments rot; three examples suffice to show the pattern, the rest is grep-able history.
-      Fix: Leave as-is or strip to one-line what/why during unrelated edits (no dedicated pass).
+- [x] **Phase/history comment noise (63 hits)** — fixed: every `Phase N` / `§N` / `previously` reference removed from source comments (Phase C). Conventions now live in ARCHITECTURE.md → Code comment conventions.
 
-- [ ] **Script runner defaults to raw console.debug** — `apps/api/src/scripts/runner.ts:32`
-      What: The default log sink is `(message) => console.debug(message)` instead of the structured `log.ts`.
-      Why it matters: Unstructured lines bypass request-id/level gating in production logs.
-      Fix: Default the sink to the structured logger.
+- [x] **Script runner defaults to raw console.debug** — fixed: the default sink is now `log.debug` from `log.ts`, so script notes join the structured stream (Phase C).
 
 - [ ] **Type escapes, all justified (6 hits)** — `apps/api/src/app.ts:132` (+5 more)
       What: `c: any` in requireAuth/currentUser/streamTurn plus the RouteHandler type, each with an eslint-disable and an explanatory comment (verified Hono inference widening); one grep hit is prose ("any code path"), not code.
@@ -143,7 +143,7 @@ coincidence, or documented by-design mirroring.
 
 - Commented-out code grep (6 hits): all false positives — prose comments starting with "for…", "return…", "so…", none is executable code. Not debt.
 - TODO/FIXME/HACK/XXX sweep: zero hits; the only 2 matches are explanatory `NOTE:` comments in `scripts/sandbox.ts:98,127`. Not debt.
-- `console.log` in `apps/api/scripts/eval-prompt.ts` and `console.debug` in `log.ts`/`runner.ts`: eval harness output and the production log sink respectively — legitimate uses. Not debt (P3 covers only the default-sinkrouting nit).
+- `console.log` in `apps/api/scripts/eval-prompt.ts` and `log.ts`: eval harness output and the single structured-log sink respectively — both legitimate. Not debt. The `runner.ts` default-sink nit this referenced is closed (Phase C).
 - Tailwind class-string repetition (`"flex flex-col gap-1 text-sm"` ×26): utility-CSS idiom, not logic duplication. Not debt.
 - Repeated URL literals (`localhost:11434` etc.): test fixtures plus three legitimate non-test uses (SSRF allowlist, dev proxy, input placeholder). Coincidence. Not debt.
 - Same local names across files (`const res/body/user/rows`): generic locals, not shared logic. Coincidence. Not debt.

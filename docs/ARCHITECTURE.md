@@ -695,6 +695,14 @@ state has one primary action and one secondary path.
   per-tab empty states; completion toggles via the drawer Story
   section (`PATCH { completedAt }`, migration 0006).
 
+## Code comment conventions
+
+- Comments explain WHY, not WHAT.
+- Never reference build phases, specs, or prompts.
+- Never narrate change history in comments — that is what git history
+  and CHANGELOG are for.
+- TODOs and FIXMEs live in docs/TECH_DEBT.md, not scattered in source.
+
 ## Frozen decisions — do NOT change without a PROGRESS.md entry
 
 - Flat action log; no branching tree, ever.
