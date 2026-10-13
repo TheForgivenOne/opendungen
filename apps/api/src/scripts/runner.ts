@@ -6,6 +6,7 @@
 // Math.random is replaced with a deterministic PRNG seeded per hook
 // call so runs are reproducible.
 
+import { log } from "../log";
 import {
   checkContextFields,
   createSandbox,
@@ -29,7 +30,7 @@ export async function runHook<T>(opts: RunHookOptions<T>): Promise<ScriptResult<
   const hook = opts.hook;
   const timeoutMs = opts.timeoutMs ?? DEFAULT_HOOK_TIMEOUT_MS;
   const memoryLimitBytes = opts.memoryLimitBytes ?? DEFAULT_HOOK_MEMORY_BYTES;
-  const logger = opts.logger ?? ((message: string) => console.debug(message));
+  const logger = opts.logger ?? ((message: string) => log.debug(message));
   const seed = opts.seed ?? `${hook}:default`;
 
   const errors: ScriptErrorInfo[] = [];

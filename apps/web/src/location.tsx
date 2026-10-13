@@ -22,7 +22,7 @@ export type View =
 export function parsePath(path: string): View {
   const parts = path.split("/").filter((p) => p.length > 0);
   if (parts.length === 0) {
-    // Phase 6: / auto-resumes (see views/home.tsx) instead of
+    // / renders the Home view (see views/home.tsx) instead of
     // listing stories.
     return { name: "home" };
   }
@@ -95,37 +95,6 @@ export function viewPath(view: View): string {
       return "/settings";
     case "not-found":
       return "/";
-  }
-}
-
-export function viewTitle(view: View): string {
-  switch (view.name) {
-    case "setup":
-      return "Setup";
-    case "login":
-      return "Login";
-    case "wizard":
-      return "Getting started";
-    case "home":
-      return "Home";
-    case "stories":
-      return "Stories";
-    case "story":
-      return "Story";
-    case "scenarios":
-      return "Scenarios";
-    case "scenario-new":
-      return "New story";
-    case "scenario-new-name":
-      return "Name your story";
-    case "scenario":
-      return "Scenario";
-    case "providers":
-      return "Providers";
-    case "settings":
-      return "Settings";
-    case "not-found":
-      return "Not found";
   }
 }
 

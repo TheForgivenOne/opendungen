@@ -1,19 +1,6 @@
 import { createApp, type AppEnv, type AuthMode } from "./app";
 import { getDb, type WorkerEnv } from "./db";
 
-export interface ApiBindings {
-  DB?: unknown;
-  AUTH_MODE?: string;
-  SESSION_SECRET?: string;
-  RATE_LIMIT_ENABLED?: string;
-  ALLOW_PRIVATE_PROVIDER_URLS?: string;
-  CORS_ORIGINS?: string;
-  LOG_LEVEL?: string;
-  SENTRY_DSN?: string;
-  INSTANCE_SCRIPTS_ENABLED?: string;
-  NODE_ENV?: string;
-}
-
 function readAuthMode(env: WorkerEnv): AuthMode {
   const mode = env.AUTH_MODE;
   if (mode === "none" || mode === "single" || mode === "multi") {
