@@ -1,0 +1,176 @@
+{
+  "cases": [
+    {
+      "name": "opening_fantasy",
+      "scenarioId": "builtin-fantasy-waystation",
+      "scenarioInstructions": "Tone: grim, grounded, low-magic. The world is dangerous and uncaring. Describe injuries, hunger, and exhaustion honestly. NPCs are wary of strangers. Magic is rare and feared.",
+      "history": [],
+      "input": "look around",
+      "mode": "do",
+      "maxTokens": 400
+    },
+    {
+      "name": "opening_scifi",
+      "scenarioId": "builtin-scifi-derelict",
+      "scenarioInstructions": "Tone: tense, claustrophobic, technical. Describe ship systems, sounds, and readouts concretely. NPCs are professionals under stress. No deus ex machina. Tech follows consistent rules.",
+      "history": [],
+      "input": "check the console",
+      "mode": "do",
+      "maxTokens": 400
+    },
+    {
+      "name": "opening_mystery",
+      "scenarioId": "builtin-mystery-hollow-creek",
+      "scenarioInstructions": "Tone: quiet, unsettling, 1970s. Period details should feel lived in, not nostalgic. NPCs lie for small, human reasons. Clues are concrete (objects, timelines, contradictions). Do not introduce supernatural elements.",
+      "history": [],
+      "input": "knock on the door",
+      "mode": "do",
+      "maxTokens": 400
+    },
+    {
+      "name": "dialogue",
+      "scenarioId": "builtin-fantasy-waystation",
+      "scenarioInstructions": "Tone: grim, grounded, low-magic. The world is dangerous and uncaring. Describe injuries, hunger, and exhaustion honestly. NPCs are wary of strangers. Magic is rare and feared.",
+      "history": [
+        { "type": "input", "text": "You push open the stable door." },
+        {
+          "type": "output",
+          "text": "The stable door groans on one hinge. Inside, straw crackles underfoot and something shifts in the dark far stall, breathing slow and wet."
+        },
+        { "type": "input", "text": "\"Who's there?\"" },
+        {
+          "type": "output",
+          "text": "A lantern flares. A woman with a bandaged forearm steps into its ring of light, a woodcutter's axe loose in her good hand. She does not lower it."
+        }
+      ],
+      "input": "Who are you?",
+      "mode": "say",
+      "maxTokens": 400
+    },
+    {
+      "name": "failure",
+      "scenarioId": "builtin-fantasy-waystation",
+      "scenarioInstructions": "Tone: grim, grounded, low-magic. The world is dangerous and uncaring. Describe injuries, hunger, and exhaustion honestly. NPCs are wary of strangers. Magic is rare and feared.",
+      "history": [
+        { "type": "input", "text": "You circle the waystation wall." },
+        {
+          "type": "output",
+          "text": "The wall runs smooth for twenty feet up, mortared stone gone slick with meltwater. No handholds. No ledges. Too high to climb without rope and hooks you do not have."
+        },
+        { "type": "input", "text": "You look for anything to stand on." },
+        {
+          "type": "output",
+          "text": "A rotted rain barrel and a pile of burned beams. The barrel would crumble under your weight; the beams lean the wrong way, away from the wall."
+        }
+      ],
+      "input": "climb the wall",
+      "mode": "do",
+      "maxTokens": 400
+    },
+    {
+      "name": "continue",
+      "scenarioId": "builtin-fantasy-waystation",
+      "scenarioInstructions": "Tone: grim, grounded, low-magic. The world is dangerous and uncaring. Describe injuries, hunger, and exhaustion honestly. NPCs are wary of strangers. Magic is rare and feared.",
+      "history": [
+        { "type": "input", "text": "You bar the waystation door." },
+        {
+          "type": "output",
+          "text": "The beam drops into its brackets with a sound like a closing jaw. Outside, the wind worries at the shutters. Inside, the dark settles closer."
+        },
+        { "type": "input", "text": "You check the hearth for coals." },
+        {
+          "type": "output",
+          "text": "Grey ash, cold through. But beneath it, one coal winks red when the draught finds it — alive, barely, and hungry for tinder you may not have."
+        }
+      ],
+      "mode": "continue",
+      "maxTokens": 400
+    },
+    {
+      "name": "long_context",
+      "scenarioId": "builtin-fantasy-waystation",
+      "scenarioInstructions": "Tone: grim, grounded, low-magic. The world is dangerous and uncaring. Describe injuries, hunger, and exhaustion honestly. NPCs are wary of strangers. Magic is rare and feared.",
+      "summary": "The traveler reached the waystation at dusk, found the well alive, met the wary woodcutter Maren, and learned the north road is watched. In the ruined tower they saw a blue lantern burning with no keeper.",
+      "cards": [
+        {
+          "entry": "Maren is a wary woodcutter with a bandaged forearm. Maren distrusts armed strangers. Maren owes a debt to the miller."
+        }
+      ],
+      "history": [
+        { "type": "input", "text": "You climb the tower stair." },
+        {
+          "type": "output",
+          "text": "Each step sags. Halfway up, the stairwell opens onto a round chamber where a blue lantern burns on an iron stand, and no keeper stands beside it."
+        },
+        { "type": "input", "text": "You lift the lantern down." },
+        {
+          "type": "output",
+          "text": "The glass is cold as river water. The flame leans toward you, then away, like something deciding. Below, Maren's voice calls your name up the stair."
+        }
+      ],
+      "input": "What did I see in the tower?",
+      "mode": "say",
+      "maxTokens": 400
+    },
+    {
+      "name": "tone_drift",
+      "scenarioId": "builtin-fantasy-waystation",
+      "scenarioInstructions": "Tone: grim, grounded, low-magic. The world is dangerous and uncaring. Describe injuries, hunger, and exhaustion honestly. NPCs are wary of strangers. Magic is rare and feared.",
+      "history": [
+        { "type": "input", "text": "You turn the body over." },
+        {
+          "type": "output",
+          "text": "He is young. Frost has taken two fingers. His pack holds half a loaf gone green at the edges and a letter never sent, the ink run with damp."
+        },
+        { "type": "input", "text": "You read the letter." },
+        {
+          "type": "output",
+          "text": "\"Come spring,\" it says, \"I will mend the fence and the roof both.\" The roof of a house he will never see. Your hands shake with the cold, or something else."
+        }
+      ],
+      "input": "laugh at the corpse",
+      "mode": "do",
+      "maxTokens": 400
+    },
+    {
+      "name": "agency_test",
+      "scenarioId": "builtin-fantasy-waystation",
+      "scenarioInstructions": "Tone: grim, grounded, low-magic. The world is dangerous and uncaring. Describe injuries, hunger, and exhaustion honestly. NPCs are wary of strangers. Magic is rare and feared.",
+      "history": [
+        { "type": "input", "text": "You face the stranger across the cinders." },
+        {
+          "type": "output",
+          "text": "He stops ten paces out, hands open at his sides. His breath smokes. Behind him, the stable-yard gate stands ajar on a dark too complete for moonlight."
+        },
+        { "type": "input", "text": "You set your feet." },
+        {
+          "type": "output",
+          "text": "Gravel shifts under your boots. The stranger's eyes drop to your sword hilt, then rise to your face. He waits, coiled, patient as a snare."
+        }
+      ],
+      "input": "I draw my sword",
+      "mode": "do",
+      "maxTokens": 400
+    },
+    {
+      "name": "length_check",
+      "scenarioId": "builtin-fantasy-waystation",
+      "scenarioInstructions": "Tone: grim, grounded, low-magic. The world is dangerous and uncaring. Describe injuries, hunger, and exhaustion honestly. NPCs are wary of strangers. Magic is rare and feared.",
+      "history": [
+        { "type": "input", "text": "You sit against the hearth to rest." },
+        {
+          "type": "output",
+          "text": "The stones hold a little of yesterday's warmth. Your eyelids grow heavy. Somewhere in the walls, mice go about their small urgent business."
+        },
+        { "type": "input", "text": "You close your eyes." },
+        {
+          "type": "output",
+          "text": "Darkness, and the smell of old smoke. You drift. A board creaks overhead — settling timber, or a footstep learning the floor."
+        }
+      ],
+      "input": "wait",
+      "mode": "do",
+      "maxTokens": 400
+    }
+  ]
+}

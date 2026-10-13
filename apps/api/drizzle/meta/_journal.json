@@ -1,0 +1,62 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1791828118191,
+      "tag": "0000_material_juggernaut",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1791828141968,
+      "tag": "0001_seed_scenarios",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791830709337,
+      "tag": "0002_same_guardsmen",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1791837759275,
+      "tag": "0003_massive_blizzard",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1791844564463,
+      "tag": "0004_restless_ranger",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1791846616193,
+      "tag": "0005_brown_vulture",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1791849159516,
+      "tag": "0006_rapid_patriot",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1791906000000,
+      "tag": "0007_tidy_twilight",
+      "breakpoints": true
+    }
+  ]
+}

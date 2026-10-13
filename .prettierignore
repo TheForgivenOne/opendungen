@@ -1,0 +1,14 @@
+# Generated / vendored / binary artifacts prettier must not touch.
+pnpm-lock.yaml
+dist/
+coverage/
+.wrangler/
+*.db
+*.db-journal
+
+# packages/shared/src/story.ts is byte-verbatim from the Phase 0 spec
+# (aligned comments included) and is intentionally never reformatted.
+packages/shared/src/story.ts
+
+# PROGRESS.md initial content is byte-exact from the Phase 0 spec.
+PROGRESS.md

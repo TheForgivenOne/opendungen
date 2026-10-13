@@ -1,0 +1,28 @@
+# Local development overrides for `wrangler dev`.
+# Copy to `.dev.vars` (gitignored; never commit real secrets) and edit.
+# Auth mode: "none" | "single" | "multi".
+# "multi" is reserved for a later phase and responds 501.
+AUTH_MODE = "single"
+# Secret for session JWTs. Use a long random string.
+SESSION_SECRET = "REPLACE-ME-generate-with-openssl-rand-base64-32"
+# Rate limiting (sliding 60s windows, D1-backed). "false" skips it
+# entirely (for self-hosters behind their own proxy). Default "true".
+# RATE_LIMIT_ENABLED = "true"
+# SSRF protection on provider baseUrls. "true" allows localhost/LAN
+# URLs — needed for local Ollama (e.g. http://127.0.0.1:11434).
+# Default "false" (private IPs rejected). A warning is logged when on.
+# ALLOW_PRIVATE_PROVIDER_URLS = "true"
+# Split deployments: comma-separated origins allowed to call /api/*
+# with credentials. Unset means same-origin only (no CORS headers).
+# CORS_ORIGINS = "http://127.0.0.1:5173"
+# Structured-log verbosity: "debug" | "info" | "warn" | "error".
+# Default "info".
+# LOG_LEVEL = "info"
+# Reserved error-reporting hook. Documented for deploy-time use; no
+# Sentry SDK ships with the app, so setting this currently changes
+# nothing (errors go to the structured logs).
+# SENTRY_DSN = ""
+# Scripts engine kill-switch. "false" makes scripts a no-op (turns run
+# without hooks) for deploys whose QuickJS WASM cannot load.
+# Default "true".
+# INSTANCE_SCRIPTS_ENABLED = "true"

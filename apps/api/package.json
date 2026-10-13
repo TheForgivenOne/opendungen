@@ -1,0 +1,46 @@
+{
+  "name": "@opendungen/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "predev": "pnpm --filter @opendungen/shared build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "pretypecheck": "pnpm --filter @opendungen/shared build",
+    "lint": "eslint .",
+    "format": "prettier --check package.json tsconfig.json tsconfig.node.json drizzle.config.ts vitest.config.ts src",
+    "test": "vitest run",
+    "pretest": "pnpm --filter @opendungen/shared build",
+    "build": "tsc --noEmit -p tsconfig.json",
+    "build:node": "tsc -p tsconfig.node.json && node scripts/fix-dist-imports.mjs && cp src/scripts/emscripten-module.wasm dist/scripts/emscripten-module.wasm",
+    "deploy": "wrangler deploy --env production",
+    "prebuild": "pnpm --filter @opendungen/shared build",
+    "db:generate": "drizzle-kit generate",
+    "eval-prompt": "tsx scripts/eval-prompt.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "@hono/node-server": "^2.1.4",
+    "@hono/zod-validator": "^0.9.1",
+    "@libsql/client": "^0.14.0",
+    "@noble/hashes": "^2.4.0",
+    "@opendungen/shared": "workspace:*",
+    "better-sqlite3": "^11.10.0",
+    "drizzle-orm": "^0.45.4",
+    "hono": "^4.6.0",
+    "jose": "^6.2.12",
+    "openai": "^7.32.0",
+    "quickjs-emscripten": "^0.32.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "drizzle-kit": "^0.30.0",
+    "prettier": "^3.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0",
+    "wrangler": "^4.149.0"
+  }
+}

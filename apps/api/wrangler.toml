@@ -1,0 +1,71 @@
+name = "opendungen-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Local dev serves on port 8787 (`pnpm --filter @opendungen/api dev`).
+# ip is pinned to IPv4 loopback: the default `localhost` resolves
+# dual-stack here and workerd's internal loopback channels wedge
+# (accepts connections but never responds). Verified 2026-10-12.
+[dev]
+port = 8787
+ip = "127.0.0.1"
+
+# Production SQLite via Cloudflare D1. Provision with
+# `wrangler d1 create opendungen` and replace database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "opendungen"
+database_id = "REPLACE_ME"
+# Drizzle owns schema history in ./drizzle (applied to tests via the
+# better-sqlite3 migrator). Wrangler reuses the same folder for D1:
+# `--> statement-breakpoint` lines are plain SQL comments, so D1 can
+# execute these files verbatim (`wrangler d1 migrations apply DB`).
+migrations_dir = "drizzle"
+
+# Auth mode: "none" | "single" | "multi". "multi" is reserved and
+# responds 501. Override locally in .dev.vars (see .dev.vars.example).
+[vars]
+AUTH_MODE = "single"
+# Dev-only default. Production must set a strong secret via
+# `wrangler secret put SESSION_SECRET` (and NEVER commit it).
+SESSION_SECRET = "REPLACE-ME-run-wrangler-secret-put-SESSION_SECRET"
+
+# Production deploy (Phase 5): `pnpm deploy` from the repo root builds
+# everything, then runs `wrangler deploy --env production` from apps/api.
+# Provision the production database first:
+#   wrangler d1 create opendungen
+# then paste its id below (replacing REPLACE_ME) and apply migrations:
+#   wrangler d1 migrations apply DB --remote --env production
+[env.production]
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "opendungen"
+database_id = "REPLACE_ME"
+migrations_dir = "drizzle"
+
+# The production env inherits the top-level [vars]. Override per-env
+# below as needed. Required secret (NEVER commit; per environment):
+#   wrangler secret put SESSION_SECRET --env production
+# Optional vars (set under [env.production.vars], via the dashboard,
+# or leave at their defaults):
+#   RATE_LIMIT_ENABLED = "false"            # default "true"; "false" skips
+#                                            # limiting (self-hosters
+#                                            # behind their own proxy)
+#   ALLOW_PRIVATE_PROVIDER_URLS = "true"   # default "false"; allow
+#                                            # localhost/LAN provider URLs
+#                                            # (local Ollama needs this)
+#   CORS_ORIGINS = "https://app.example.com"  # default unset =
+#                                            # same-origin only
+#   LOG_LEVEL = "debug"                    # default "info"
+#   SENTRY_DSN = "https://...@sentry.io/..."  # reserved hook only;
+#                                            # no Sentry SDK ships yet
+#   INSTANCE_SCRIPTS_ENABLED = "false"     # default "true"; "false"
+#                                            # disables Scripts (deploy
+#                                            # without working QuickJS WASM)
+[env.production.vars]
+# Strict Content-Security-Policy in production; anything else relaxes
+# connect-src for the Vite dev server + HMR websocket.
+NODE_ENV = "production"
+
+# NOTE: No LLM provider or model is configured here or anywhere else in this
+# repo. Self-hosters must bring their own provider (setup screen in Phase 2).
