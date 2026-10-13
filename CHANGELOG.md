@@ -6,6 +6,11 @@ Versioning follows Semantic Versioning.
 
 ## [Unreleased]
 
+### Changed
+- Relicensed from Apache-2.0 to BUSL-1.1: copy, modify, and
+  self-host freely; commercial hosted competition excluded.
+  v0.1.0 converts to Apache-2.0 on 2030-10-13.
+
 ## [0.1.0] - 2026-10-13
 
 ### Added

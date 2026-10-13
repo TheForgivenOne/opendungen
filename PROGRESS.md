@@ -4,7 +4,7 @@
 
 Ship prep completed in Phase S. Checklist (source: docs/RELEASE.md):
 
-- [x] LICENSE present (Apache-2.0)
+- [x] LICENSE present (BUSL-1.1, relicensed Phase O)
 - [x] SECURITY.md present (vulnerability reporting, scope, supported versions)
 - [x] CHANGELOG.md present with [0.1.0] section
 - [x] README has License, Security, Changelog, Screenshots sections
@@ -289,6 +289,11 @@ Ship prep completed in Phase S. Checklist (source: docs/RELEASE.md):
   (Node 24 prebuilds; no source compile needed).
 - Stack: Vite+React / Hono on Workers / libSQL+Drizzle (dual driver:
   D1 in prod, better-sqlite3 locally) / Tailwind v4 / pnpm / Node 24.
+- License: Business Source License 1.1 (BUSL-1.1), licensor
+  TheForgivenOne. Self-hosting and modification allowed; commercial
+  hosted competition excluded. v0.1.0 converts to Apache-2.0 on
+  2030-10-13 (BSL caps conversion at the fourth anniversary). Each
+  release sets its own change date.
 - No default LLM provider or model. Self-hoster configures via setup
   screen in Phase 2.
 - Per-user API keys, encrypted (AES-GCM, key from instance secret).

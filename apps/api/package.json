@@ -2,6 +2,7 @@
   "name": "@opendungen/api",
   "version": "0.1.0",
   "private": true,
+  "license": "BUSL-1.1",
   "type": "module",
   "scripts": {
     "dev": "wrangler dev --port 8787",

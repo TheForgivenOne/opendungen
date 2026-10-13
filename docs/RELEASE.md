@@ -5,7 +5,7 @@ This file tracks the OpenDungen v1 release checklist.
 ## v0.1.0 release checklist
 
 ### Repo readiness
-- [ ] LICENSE present (Apache-2.0)
+- [ ] LICENSE present (BUSL-1.1)
 - [ ] SECURITY.md present (vulnerability reporting, scope, supported versions)
 - [ ] CHANGELOG.md present with [0.1.0] section
 - [ ] README has License, Security, Changelog, Screenshots sections

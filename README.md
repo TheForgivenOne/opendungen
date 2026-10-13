@@ -159,7 +159,10 @@ HKDF — **rotating `SESSION_SECRET` invalidates all stored provider keys**
 
 ## License
 
-OpenDungen is released under the Apache-2.0 license. See
+OpenDungen is source-available under the Business Source License 1.1
+(BUSL-1.1). You may copy, modify, and self-host it; you may not offer
+it to third parties as a commercial hosted service. Each release
+converts to Apache-2.0 on its change date (v0.1.0: 2030-10-13). See
 [LICENSE](LICENSE) for details.
 
 ## Security
