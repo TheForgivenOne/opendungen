@@ -1,4 +1,4 @@
-// Single-column scenario list (Phase 6b): full-width 56px rows used
+// Single-column scenario list: full-width 56px rows used
 // by the setup wizard (step 1) and the new-story flow (/scenarios/new).
 // The first (fantasy) scenario is pre-selected; Enter/click selects and
 // advances (parents own the advance).

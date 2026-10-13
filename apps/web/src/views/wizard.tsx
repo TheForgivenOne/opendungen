@@ -1,4 +1,4 @@
-// Setup wizard (Phase 6b): scenario → name → provider, then straight
+// Setup wizard: scenario → name → provider, then straight
 // into the story with its opening turn already streaming. Three steps,
 // one primary button each (Next, Next, Connect), three dots at the
 // bottom. No top bar (this renders outside the shell). Completion is

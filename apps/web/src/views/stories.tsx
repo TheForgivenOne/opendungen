@@ -1,4 +1,4 @@
-// Stories list (Phase 6b): plain rows under three tabs — Playing
+// Stories list: plain rows under three tabs — Playing
 // (an output exists), Completed (marked complete in the story drawer),
 // Drafts (zero actions). Search + text sort menu sit above the tabs;
 // counts come from the same per-story action queries as the rows.

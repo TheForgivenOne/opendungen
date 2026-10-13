@@ -1,4 +1,4 @@
-// Phase 6c §2–§3: provider display names (label shown only when it
+// Provider display names (label shown only when it
 // differs from the model), the required-label inline validation with
 // kind-based suggestions, and the Rename affordance.
 

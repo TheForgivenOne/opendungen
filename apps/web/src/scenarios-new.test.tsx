@@ -1,4 +1,4 @@
-// New-story two-screen flow (Phase 6b): /scenarios/new is a
+// New-story two-screen flow: /scenarios/new is a
 // single-column list (first item pre-selected, Enter/click advances);
 // /scenarios/new/name is one centered field, pre-filled, Enter creates.
 

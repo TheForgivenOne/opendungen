@@ -99,6 +99,6 @@ function StartFromScenarioButton({ scenarioId, title }: { scenarioId: string; ti
   );
 }
 
-// Two-screen new-story flow (Phase 6b): a single-column scenario list,
+// Two-screen new-story flow: a single-column scenario list,
 // then one centered name field. Top-level routes, no grid, no modal.
 // The list selection travels in sessionStorage (the name screen reads

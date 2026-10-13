@@ -12,7 +12,7 @@ export interface Story {
   createdAt: number;
   updatedAt: number;
   deletedAt: number | null;
-  // Phase 4: persistent provider override (null = default) + nullable
+  // Persistent provider override (null = default) + nullable
   // context/compressor overrides (null = shared constants).
   providerId: string | null;
   compressTriggerPct: number | null;
@@ -20,7 +20,7 @@ export interface Story {
   compressTemperature: number | null;
   contextTokens: number | null;
   maxOutputTokens: number | null;
-  // Phase 6b: completion marker; null = playing.
+  // Completion marker; null = playing.
   completedAt: number | null;
 }
 

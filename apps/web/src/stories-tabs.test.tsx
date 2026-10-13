@@ -1,4 +1,4 @@
-// Story list tabs (Phase 6b): Playing / Completed / Drafts filtering,
+// Story list tabs: Playing / Completed / Drafts filtering,
 // completion via the drawer action (PATCH completedAt), per-tab empty
 // states.
 

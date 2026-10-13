@@ -1,4 +1,4 @@
-// Landing route (Phase 6c): / renders a Home Continue card for the
+// Landing route: / renders a Home Continue card for the
 // newest story (never auto-navigates); zero stories keeps the
 // one-scenario empty state.
 

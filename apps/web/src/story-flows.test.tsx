@@ -1,4 +1,4 @@
-// Story-view flows (Phase 6b): footer order, Continue as a real
+// Story-view flows: footer order, Continue as a real
 // generation, inline error recovery, input history, setup banner,
 // resume focus/scroll, mark-complete drawer action.
 

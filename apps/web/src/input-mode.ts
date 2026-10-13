@@ -1,4 +1,4 @@
-// Player input modes (Phase 6): do / say / story. The client
+// Player input modes: do / say / story. The client
 // transforms the text before sending (so the optimistic overlay
 // matches the persisted row); the server applies the same idempotent
 // rule, and stores the mode for rendering. The API duplicates this

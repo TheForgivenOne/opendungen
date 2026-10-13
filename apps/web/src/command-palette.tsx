@@ -1,4 +1,4 @@
-// Command palette (Phase 6): Cmd/Ctrl+K modal, no library. A
+// Command palette: Cmd/Ctrl+K modal, no library. A
 // filtered list of navigation actions + stories (+ the current
 // story's scripts when in story view). Arrow keys navigate, Enter
 // selects, Esc closes. ~150 lines by design.
