@@ -10,7 +10,7 @@
   file-backed better-sqlite3 for local Node. One `./drizzle` migration
   history serves D1 (`wrangler d1 migrations apply`), local dev
   (`--local`), and tests (better-sqlite3 migrator on `:memory:`).
-- **pnpm workspaces, Node 22, TypeScript only.** No default LLM provider
+- **pnpm workspaces, Node 24, TypeScript only.** No default LLM provider
   or model anywhere in the repo.
 
 ## Data model summary
@@ -446,7 +446,7 @@ Two supported paths (README has the full steps):
   `pnpm deploy` (builds everything, then
   `wrangler deploy --env production`). Production sets
   `NODE_ENV=production` for the strict CSP.
-- **Node self-host**: Node 22 + a writable SQLite path;
+- **Node self-host**: Node 24 + a writable SQLite path;
   `DB_DRIVER=local DB_PATH=... SESSION_SECRET=...`, `pnpm -r build`,
   then `node apps/api/dist/node.js` (`apps/api/src/node.ts`: same Hono
   app on better-sqlite3 via `@hono/node-server`, `PORT` default 8787,

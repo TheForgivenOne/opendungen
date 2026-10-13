@@ -3,7 +3,7 @@
 ## Stack (locked)
 TypeScript only. No Python. Hono on Cloudflare Workers. Vite +
 React + Tailwind v4. libSQL + Drizzle (D1 in prod, better-sqlite3
-locally). pnpm workspaces. Node 22.
+locally). pnpm workspaces. Node 24.
 
 No Next.js. No Postgres. No Redis. No component library. No router
 library.

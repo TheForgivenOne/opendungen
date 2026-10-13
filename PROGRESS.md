@@ -213,6 +213,11 @@ Ship prep completed in Phase S. Checklist (source: docs/RELEASE.md):
   phases, specs, prompts, or agent reasoning; the script runner's
   default log sink now routes through log.ts; four unused exports
   and one unused type removed. No behavior changes.
+- Phase N: Node 24. better-sqlite3 11.10.0 → 12.11.1 (v11 ships no
+  Node 24 prebuilt; v12 loads cleanly, no source compile). Engines
+  floor >=22 → >=24; CI node-version 22 → 24 (both jobs); Node 22
+  mentions updated in ARCHITECTURE, README, and .pi/APPEND_SYSTEM.
+  Test counts: api 330, web 120, shared 2, e2e 21.
 
 ## Known issues
 - docs/screenshot.png is a placeholder; replace before public announcement.
@@ -280,10 +285,10 @@ Ship prep completed in Phase S. Checklist (source: docs/RELEASE.md):
   per turn; two empties persist no output and surface
   `empty_completion`. The input action is always kept.
 - Phase F: drizzle-orm tracks the patched line (>=0.45.2 for
-  GHSA-gpj5-g38j-94v9); better-sqlite3 stays on v11 (v13 has no
-  prebuilt binary and this environment cannot compile it).
+  GHSA-gpj5-g38j-94v9); better-sqlite3 moved to v12 in Phase N
+  (Node 24 prebuilds; no source compile needed).
 - Stack: Vite+React / Hono on Workers / libSQL+Drizzle (dual driver:
-  D1 in prod, better-sqlite3 locally) / Tailwind v4 / pnpm / Node 22.
+  D1 in prod, better-sqlite3 locally) / Tailwind v4 / pnpm / Node 24.
 - No default LLM provider or model. Self-hoster configures via setup
   screen in Phase 2.
 - Per-user API keys, encrypted (AES-GCM, key from instance secret).
