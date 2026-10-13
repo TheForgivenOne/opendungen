@@ -14,7 +14,7 @@ export type AppDb = WorkerDb | LocalDb;
 
 export type AuthMode = "none" | "single" | "multi";
 
-// Phase 5 runtime environment. Every field is optional at construction
+// Runtime environment. Every field is optional at construction
 // and merges over DEFAULT_ENV; index.ts (Workers) and node.ts (Node)
 // build it from their respective env sources. Tests pass partial envs.
 export interface AppEnv {
@@ -168,7 +168,7 @@ export function createApp(options: AppOptions) {
 
   registerCards(app, ctx);
 
-  // ---- providers (Phase 2a; api_key_enc never leaves the server) ----
+  // ---- providers (api_key_enc never leaves the server) ----
 
   registerProviders(app, ctx);
 
@@ -181,22 +181,22 @@ export function createApp(options: AppOptions) {
 
   registerScenarios(app, ctx);
 
-  // ---- import / export (Phase 4) ----
+  // ---- import / export ----
   registerExport(app, ctx);
 
   // (import validation lives in services/import.ts)
 
   registerImport(app, ctx);
 
-  // ---- scripts (Phase 2b) ----
+  // ---- scripts ----
 
   registerScripts(app, ctx);
 
-  // ---- compressed ranges (Phase 2c; a view over the action log) ----
+  // ---- compressed ranges (a view over the action log) ----
 
   registerRanges(app, ctx);
 
-  // ---- settings (Phase 3) ----
+  // ---- settings ----
 
   registerSettings(app, ctx);
 

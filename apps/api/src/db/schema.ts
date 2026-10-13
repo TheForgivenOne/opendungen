@@ -11,7 +11,7 @@ import {
   unique,
 } from "drizzle-orm/sqlite-core";
 
-// Phase 1 schema, plus Phase 2b script tables. Tables that have no API/UI
+// Schema, plus script tables. Tables that have no API/UI
 // yet (compressed_ranges, rate_limits) are schema-only.
 
 export const users = sqliteTable("users", {
@@ -51,11 +51,11 @@ export const providerConfigs = sqliteTable(
     apiKeyEnc: text("api_key_enc").notNull(),
     isDefault: integer("is_default").notNull().default(0),
     createdAt: integer("created_at").notNull(),
-    // Phase 7: per-provider timeouts, null = defaults (60s TTFT,
+    // Per-provider timeouts, null = defaults (60s TTFT,
     // 180s total). Validated to 1000–600000 ms on write.
     ttftTimeoutMs: integer("ttft_timeout_ms"),
     totalTimeoutMs: integer("total_timeout_ms"),
-    // Phase 7: JSON object of extra HTTP headers, honored only by the
+    // JSON object of extra HTTP headers, honored only by the
     // openai-compatible adapter. Nullable; never returned by GET.
     customHeaders: text("custom_headers"),
   },
@@ -102,7 +102,7 @@ export const stories = sqliteTable(
     compressTemperature: real("compress_temperature"),
     contextTokens: integer("context_tokens"),
     maxOutputTokens: integer("max_output_tokens"),
-    // Phase 6b: null = playing, non-null (unix ms) = completed.
+    // Null = playing, non-null (unix ms) = completed.
     completedAt: integer("completed_at"),
   },
   (t) => [index("stories_user_id_deleted_at_idx").on(t.userId, t.deletedAt)],
@@ -119,7 +119,7 @@ export const actions = sqliteTable(
     // 'input' | 'output' | 'continue'
     type: text("type").notNull(),
     text: text("text").notNull(),
-    // Phase 6: player input mode ('do' | 'say' | 'story');
+    // Player input mode ('do' | 'say' | 'story');
     // NULL means AI output (or pre-Phase-6 rows).
     mode: text("mode"),
     createdAt: integer("created_at").notNull(),
@@ -145,7 +145,7 @@ export const storyCards = sqliteTable(
   (t) => [index("story_cards_story_id_idx").on(t.storyId)],
 );
 
-// Phase 2b: user scripts attached to exactly one of a story or a scenario.
+// User scripts attached to exactly one of a story or a scenario.
 export const scripts = sqliteTable(
   "scripts",
   {
@@ -167,7 +167,7 @@ export const scripts = sqliteTable(
   ],
 );
 
-// Phase 2b: per-script, per-story persisted state (JSON).
+// Per-script, per-story persisted state (JSON).
 export const scriptStates = sqliteTable(
   "script_states",
   {

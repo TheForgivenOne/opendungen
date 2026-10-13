@@ -1,4 +1,4 @@
-// Phase 6 input modes: client-side text transformation (the server
+// Input modes: client-side text transformation (the server
 // applies the same idempotent rule) + persistence + rendering shapes.
 
 import { describe, expect, it } from "vitest";

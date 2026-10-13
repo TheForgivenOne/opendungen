@@ -10,7 +10,7 @@ import { apiError } from "./http";
 import { invalidRequest } from "./schemas";
 import type { AppRouter, RouteCtx } from "./types";
 
-// Phase 6b: `continue: true` generates from context with no new
+// `continue: true` generates from context with no new
 // input (Continue is a real generation, not a fake ellipsis input).
 // The input text is required on normal turns, absent on continues.
 const generateSchema = z

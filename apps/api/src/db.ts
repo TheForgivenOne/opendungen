@@ -15,7 +15,7 @@ export interface WorkerEnv {
 }
 
 // Production SQLite client (Cloudflare Workers). Uses the D1 binding named
-// DB from wrangler.toml. The Phase 1 schema lives in ./db/schema.ts and is
+// DB from wrangler.toml. The schema lives in ./db/schema.ts and is
 // applied with `wrangler d1 migrations apply DB` (local: `--local`).
 export function getDb(env: WorkerEnv) {
   if (!env.DB) {

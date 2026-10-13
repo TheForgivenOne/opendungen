@@ -1,4 +1,4 @@
-// Context assembly: builds the layered Phase P message list for one
+// Context assembly: builds the layered message list for one
 // turn. Uses only the frozen budget constants from story.ts. No
 // tokenizer is shipped — token counts are rough chars/4 estimates by
 // design. Fixed wording lives in context/prompts.ts (single source of
@@ -24,9 +24,8 @@
 // instructions, the mode directive, or the last action. The dynamic
 // 30% splits cards 25% / history 50% / memory 25%. Actions covered by
 // an active compressed range are replaced by one synthetic assistant
-// message per outermost range at the range's startIdx position
-// (Phase 2c); restored ranges (per-turn restoreRangeIds) keep their
-// actions verbatim instead.
+// message at the outermost range's startIdx position; restored ranges
+// (per-turn restoreRangeIds) keep their actions verbatim instead.
 
 import {
   DEFAULT_CONTEXT_BUDGET,

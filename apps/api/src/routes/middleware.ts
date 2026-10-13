@@ -58,7 +58,7 @@ function rateLimitRoute(method: string, path: string): string | null {
 export function registerMiddleware(app: AppRouter, ctx: RouteCtx) {
   const { authMode, db, env, sessionSecret } = ctx;
 
-  // ---- Phase 5: observability + hardening middleware ----
+  // ---- observability + hardening middleware ----
   // Registered before every route so they wrap all handlers. Post-next
   // work runs in reverse registration order, so the error-shape rewrite
   // (registered second) sees the final responses of everything below.

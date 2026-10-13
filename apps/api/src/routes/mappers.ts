@@ -43,7 +43,7 @@ export function toStory(row: StoryRow) {
     createdAt: row.createdAt,
     updatedAt: row.updatedAt,
     deletedAt: row.deletedAt,
-    // Phase 4: persistent provider override (null = is_default) +
+    // Persistent provider override (null = is_default) +
     // nullable context/compressor overrides (null = constants).
     providerId: row.providerId,
     compressTriggerPct: row.compressTriggerPct,
@@ -51,7 +51,7 @@ export function toStory(row: StoryRow) {
     compressTemperature: row.compressTemperature,
     contextTokens: row.contextTokens,
     maxOutputTokens: row.maxOutputTokens,
-    // Phase 6b: null = playing, non-null = completed.
+    // Null = playing, non-null = completed.
     completedAt: row.completedAt,
   };
 }

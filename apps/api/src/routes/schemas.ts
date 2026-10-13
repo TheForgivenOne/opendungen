@@ -46,16 +46,16 @@ export const patchStorySchema = z
     aiInstructions: z.string().max(20000).optional(),
     plotEssentials: z.string().max(20000).optional(),
     memory: z.string().max(20000).optional(),
-    // Phase 4: persistent provider override; null clears it.
+    // Persistent provider override; null clears it.
     providerId: z.string().min(1).max(128).nullable().optional(),
-    // Phase 4: nullable per-story overrides, validated to sane ranges.
+    // Nullable per-story overrides, validated to sane ranges.
     // Null clears back to the shared constants.
     compressTriggerPct: z.number().min(0.3).max(0.95).nullable().optional(),
     compressMaxTokens: z.number().int().min(200).max(2000).nullable().optional(),
     compressTemperature: z.number().min(0).max(1).nullable().optional(),
     contextTokens: z.number().int().min(2048).max(200000).nullable().optional(),
     maxOutputTokens: z.number().int().min(100).max(4000).nullable().optional(),
-    // Phase 6b: completion marker; a unix-ms timestamp or null.
+    // Completion marker; a unix-ms timestamp or null.
     completedAt: z.number().int().min(1).nullable().optional(),
   })
   .refine((o) => Object.keys(o).length > 0, {

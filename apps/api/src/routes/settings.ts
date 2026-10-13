@@ -20,7 +20,7 @@ export function registerSettings(app: AppRouter, ctx: RouteCtx) {
       version: apiPackage.version,
       hasSessionSecret: sessionSecret.length > 0,
       setupComplete: await anyUsers(db),
-      // Phase 5: hardening/observability posture for the settings UI.
+      // Hardening/observability posture for the settings UI.
       rateLimitEnabled: env.rateLimitEnabled,
       allowPrivateProviderUrls: env.allowPrivateProviderUrls,
       logLevel: env.logLevel,
