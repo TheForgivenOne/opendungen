@@ -8,7 +8,7 @@ import { navigate } from "../../location";
 import { useDeleteStory, useSaveStory } from "../../queries";
 import { buttonClass, ghostClass, inputClass } from "../../ui";
 
-// Phase 4 advanced settings: nullable per-story overrides. Effective
+// Advanced settings: nullable per-story overrides. Effective
 // values fall back to the shared constants; null resets to defaults.
 // Must match packages/shared/src/story.ts + context/compress.ts.
 export const EFFECTIVE_DEFAULTS = {

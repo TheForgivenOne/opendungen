@@ -1,0 +1,13 @@
+{
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.rightClickBehavior": "copyPaste",
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.terminal.copySelection",
+    "workbench.action.terminal.paste"
+  ],
+  "terminal.integrated.sendKeybindingsToShell": false,
+  "editor.formatOnPaste": false,
+  "editor.pasteAs.showPasteSelector": "never",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "terminal.integrated.macOptionIsMeta": true
+}

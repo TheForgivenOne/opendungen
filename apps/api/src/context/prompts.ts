@@ -1,7 +1,7 @@
-// Layered narrative prompt (Phase P). This module is the single
+// Layered narrative prompt. This module is the single
 // source of truth for the fixed prompt layers; the assembler
 // (context/assemble.ts) decides placement and trimming, never wording.
-// The text below is fixed by spec — do not paraphrase, "improve", or
+// The wording below is fixed — do not paraphrase, "improve", or
 // reflow it. Prompt changes must be evaluated with
 // `pnpm --filter api eval-prompt` before merging.
 

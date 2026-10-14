@@ -1,4 +1,4 @@
-// Story view tests (Phase 6): in-place editing via click →
+// Story view tests: in-place editing via click →
 /// contenteditable → Enter → PATCH, and header collapse on scroll.
 
 import { afterEach, describe, expect, it, vi } from "vitest";

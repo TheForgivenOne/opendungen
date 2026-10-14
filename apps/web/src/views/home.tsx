@@ -1,7 +1,7 @@
-// Landing route (Phase 6c): a Home card for the most recently
+// Landing route: a Home card for the most recently
 // updated story (Continue / Start writing + preview), never an
 // auto-navigate. With zero stories the one-scenario empty state
-// (Phase 6b §5) is unchanged.
+// applies.
 
 import { navigate } from "../location";
 import { useCreateStory, useScenario, useScenarios, useStories, useStoryActions } from "../queries";

@@ -8,11 +8,6 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 export type Theme = "light" | "dark" | "system";
 
 export const THEME_KEY = "opendungen.theme";
-export const THEMES: { value: Theme; label: string }[] = [
-  { value: "light", label: "Light" },
-  { value: "dark", label: "Dark" },
-  { value: "system", label: "System" },
-];
 
 export function systemPrefersDark(): boolean {
   return window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -34,7 +29,7 @@ export function applyTheme(theme: Theme): void {
 
 export function readStoredTheme(): Theme {
   const raw = window.localStorage.getItem(THEME_KEY);
-  // Dark is the default (Phase 6); light/system are opt-in.
+  // Dark is the default; light/system are opt-in.
   return raw === "light" || raw === "dark" || raw === "system" ? raw : "dark";
 }
 

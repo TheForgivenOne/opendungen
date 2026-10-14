@@ -3,7 +3,7 @@
 /* Class-based dark mode (Tailwind v4: pledge the variant explicitly). */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Phase 6 design tokens. Dark is the default: :root carries the dark
+/* Design tokens. Dark is the default: :root carries the dark
    palette and `html:not(.dark)` carries light. The theme system
    toggles a single `.dark` class on <html> (pre-paint default dark,
    see index.html). Every component uses only these tokens — no raw

@@ -30,7 +30,7 @@ export function registerScenarios(app: AppRouter, ctx: RouteCtx) {
     return c.json({ scenario: toScenarioDetail(scenario) });
   });
 
-  // ---- scenario authoring (Phase 4) ----
+  // ---- scenario authoring ----
   // Rows with user_id set are user-owned and editable; null user_id
   // means builtin (read-only). In single-user modes every non-builtin
   // row belongs to the caller, so editability is exactly !builtin.

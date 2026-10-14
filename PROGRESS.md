@@ -1,5 +1,20 @@
 # OpenDungen — Progress
 
+## Release: v0.1.0
+
+Ship prep completed in Phase S. Checklist (source: docs/RELEASE.md):
+
+- [x] LICENSE present (BUSL-1.1, relicensed Phase O)
+- [x] SECURITY.md present (vulnerability reporting, scope, supported versions)
+- [x] CHANGELOG.md present with [0.1.0] section
+- [x] README has License, Security, Changelog, Screenshots sections
+- [~] docs/screenshot.png is a 1x1 placeholder; real screenshot needed before announcement
+- [x] Version is `0.1.0` in root, apps/api, apps/web package.json
+- [x] `GET /api/settings/instance` reads version from package.json (returns `"0.1.0"`)
+- [ ] Git tag v0.1.0 (user action, not yet pushed)
+- [ ] GitHub release published (user action)
+
+
 ## Done
 - Phase 0: workspace scaffold, Hono worker, Vite app, Drizzle+libSQL
   dual driver, CI, docs stub.
@@ -194,7 +209,18 @@
   scope); all *.test.ts suites (cohesive per-concern, splitting
   adds churn with zero benefit).
 
+- Phase C: code hygiene. Source comments no longer reference build
+  phases, specs, prompts, or agent reasoning; the script runner's
+  default log sink now routes through log.ts; four unused exports
+  and one unused type removed. No behavior changes.
+- Phase N: Node 24. better-sqlite3 11.10.0 → 12.11.1 (v11 ships no
+  Node 24 prebuilt; v12 loads cleanly, no source compile). Engines
+  floor >=22 → >=24; CI node-version 22 → 24 (both jobs); Node 22
+  mentions updated in ARCHITECTURE, README, and .pi/APPEND_SYSTEM.
+  Test counts: api 330, web 120, shared 2, e2e 21.
+
 ## Known issues
+- docs/screenshot.png is a placeholder; replace before public announcement.
 - Phase P eval (gpt-oss:20b via Ollama Cloud, temp 0.8, 2026-10-13):
   length compliance is partial — first pass word counts:
   fantasy 100, scifi 55, dialogue 206, failure 188, continue 123,
@@ -242,6 +268,11 @@
   Ollama instead.
 
 ## Decisions
+- Comments explain why, not what.
+- No phase/spec/prompt references in source comments.
+- TODOs live in docs/TECH_DEBT.md.
+- Unused exports removed unless marked "Exported for tests."
+- Prompt text in prompts.ts is verbatim by design.
 - Phase E: E2E is Playwright, Chromium only, capped at 25 tests.
 - Phase E: E2E uses a stub provider, never real APIs.
 - Phase E: fresh SQLite per test file (temp dir, removed after).
@@ -254,10 +285,15 @@
   per turn; two empties persist no output and surface
   `empty_completion`. The input action is always kept.
 - Phase F: drizzle-orm tracks the patched line (>=0.45.2 for
-  GHSA-gpj5-g38j-94v9); better-sqlite3 stays on v11 (v13 has no
-  prebuilt binary and this environment cannot compile it).
+  GHSA-gpj5-g38j-94v9); better-sqlite3 moved to v12 in Phase N
+  (Node 24 prebuilds; no source compile needed).
 - Stack: Vite+React / Hono on Workers / libSQL+Drizzle (dual driver:
-  D1 in prod, better-sqlite3 locally) / Tailwind v4 / pnpm / Node 22.
+  D1 in prod, better-sqlite3 locally) / Tailwind v4 / pnpm / Node 24.
+- License: Business Source License 1.1 (BUSL-1.1), licensor
+  TheForgivenOne. Self-hosting and modification allowed; commercial
+  hosted competition excluded. v0.1.0 converts to Apache-2.0 on
+  2030-10-13 (BSL caps conversion at the fourth anniversary). Each
+  release sets its own change date.
 - No default LLM provider or model. Self-hoster configures via setup
   screen in Phase 2.
 - Per-user API keys, encrypted (AES-GCM, key from instance secret).

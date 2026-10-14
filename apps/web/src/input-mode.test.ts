@@ -1,4 +1,4 @@
-// Input mode rules (Phase 6): transformation cases shared with the
+// Input mode rules: transformation cases shared with the
 // server copy, plus localStorage persistence of the last-used mode.
 
 import { describe, expect, it } from "vitest";

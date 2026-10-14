@@ -1,7 +1,8 @@
 {
   "name": "@opendungen/api",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
+  "license": "BUSL-1.1",
   "type": "module",
   "scripts": {
     "dev": "wrangler dev --port 8787",
@@ -26,7 +27,7 @@
     "@libsql/client": "^0.14.0",
     "@noble/hashes": "^2.4.0",
     "@opendungen/shared": "workspace:*",
-    "better-sqlite3": "^11.10.0",
+    "better-sqlite3": "^12.11.1",
     "drizzle-orm": "^0.45.4",
     "hono": "^4.6.0",
     "jose": "^6.2.12",

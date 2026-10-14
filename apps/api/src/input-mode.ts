@@ -1,4 +1,4 @@
-// Player input modes (Phase 6). The mode is set by the client on
+// Player input modes. The mode is set by the client on
 // input actions and stored verbatim on the row — the server never
 // remaps it. The TEXT transformation below runs on both ends: the
 // client applies it before sending (so the optimistic overlay matches

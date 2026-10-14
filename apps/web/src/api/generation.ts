@@ -157,7 +157,7 @@ export function streamRetry(
   );
 }
 
-// Phase 6b Continue: a real generation from context with no new
+// Continue: a real generation from context with no new
 // input. Persists only the output action.
 export function streamContinue(
   storyId: string,

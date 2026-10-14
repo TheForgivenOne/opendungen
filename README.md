@@ -8,12 +8,12 @@ does and an AI narrator writes what happens next.
 ## Stack
 
 - Frontend: Vite + React + TypeScript + Tailwind CSS v4 (`apps/web`)
-- Backend: Hono running on Cloudflare Workers (`apps/api`), or on Node 22
+- Backend: Hono running on Cloudflare Workers (`apps/api`), or on Node 24
   via the built entry point (`apps/api/dist/node.js`)
 - DB: SQLite via libSQL with Drizzle ORM, dual driver — Cloudflare D1 in
   production, file-backed SQLite via better-sqlite3 for local Node self-hosting
 - Shared story model: TypeScript interfaces (`packages/shared`)
-- Package manager: pnpm workspaces, Node 22 LTS
+- Package manager: pnpm workspaces, Node 24 LTS
 
 ## Deploy to Cloudflare (recommended)
 
@@ -53,7 +53,7 @@ does and an AI narrator writes what happens next.
 
 ## Self-host on a Node server
 
-Requires Node 22 and a writable directory for the SQLite file.
+Requires Node 24 and a writable directory for the SQLite file.
 
 1. Configure the environment:
    ```sh
@@ -156,3 +156,26 @@ HKDF — **rotating `SESSION_SECRET` invalidates all stored provider keys**
   is logged at boot.
 - `429 rate_limited` on login/setup: wait for the `Retry-After`
   window, or set `RATE_LIMIT_ENABLED=false` behind your own proxy.
+
+## License
+
+OpenDungen is source-available under the Business Source License 1.1
+(BUSL-1.1). You may copy, modify, and self-host it; you may not offer
+it to third parties as a commercial hosted service. Each release
+converts to Apache-2.0 on its change date (v0.1.0: 2030-10-13). See
+[LICENSE](LICENSE) for details.
+
+## Security
+
+To report a vulnerability, see [SECURITY.md](SECURITY.md).
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
+## Screenshots
+
+![OpenDungen story view](docs/screenshot.png)
+
+<!-- TODO: replace docs/screenshot.png with a real screenshot
+     of a play session before public announcement -->

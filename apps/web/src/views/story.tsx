@@ -1,4 +1,4 @@
-// Story view (Phase 6): a continuous text column, not chat. No
+// Story view: a continuous text column, not chat. No
 // bubbles, cards, or per-row buttons — narrative in serif, player
 // input in mono with a quiet › marker, chrome (header) collapsing on
 // scroll, and all settings behind a right-hand drawer. SSE state stays

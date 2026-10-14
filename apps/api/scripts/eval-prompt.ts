@@ -1,4 +1,4 @@
-// Prompt eval runner (Phase P, reading tool — not CI).
+// Prompt eval runner (reading tool — not CI).
 // For each case in eval-cases.json: builds the context with the real
 // assembler, drains one non-streamed provider call (temperature 0.8,
 // maxTokens from the case), and writes the output for human review.

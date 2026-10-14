@@ -167,7 +167,7 @@ export function ActionView({
   );
 }
 
-// Inline generation failure (Phase 6b): rendered in the story column
+// Inline generation failure: rendered in the story column
 // at the position where the output would have been. 13px sans muted,
 // no background, 1.5rem indent matching AI output. Retry regenerates
 // (lone input) or the last output; Edit input opens the input above

@@ -1,4 +1,4 @@
-// App shell (Phase 6): no persistent chrome. Views own their headers;
+// App shell: no persistent chrome. Views own their headers;
 // the shell provides a global nav drawer (hamburger in each view's
 // header), the command palette (Cmd/Ctrl+K), and the toast stack lives
 // above it in main.tsx. No router library — nav items push logical
@@ -28,7 +28,7 @@ function isActive(pathname: string, item: string): boolean {
   return pathname === item || pathname.startsWith(`${item}/`);
 }
 
-// Persistent top bar (Phase 6b): primary navigation is always
+// Persistent top bar: primary navigation is always
 // visible — the command palette stays a power-user shortcut, not the
 // only way around. 40px tall on every app route; the wizard renders
 // outside the shell so it never shows the bar.

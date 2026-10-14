@@ -1,4 +1,4 @@
-// Phase 6c §5 (scroll bounce) + §4 (top fade): auto-scroll pins the
+// Scroll bounce + top fade: auto-scroll pins the
 // bottom only while the reader is parked there, never smooth, with an
 // 800ms quiet window and a scrolled-away flag; the top fade shows
 // only when scrollTop > 0.

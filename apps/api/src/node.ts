@@ -1,4 +1,4 @@
-// Node.js entry point for non-Cloudflare self-hosting (Phase 5 §6a).
+// Node.js entry point for non-Cloudflare self-hosting.
 // Imports the same Hono app as the Worker entry, backed by the local
 // better-sqlite3 driver, served via @hono/node-server.
 //

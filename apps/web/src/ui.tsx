@@ -84,9 +84,6 @@ export function formatRelative(timestamp: number): string {
   return `${days}d ago`;
 }
 
-// Must match DEFAULT_CONTEXT_BUDGET.totalTokens in packages/shared/src/story.ts.
-export const CONTEXT_BUDGET_TOKENS = 8192;
-
 export function ScenarioTag({ tag }: { tag: string }) {
   return <span className="rounded bg-accent/10 px-2 py-0.5 text-xs text-accent">{tag}</span>;
 }

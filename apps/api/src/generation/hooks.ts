@@ -1,4 +1,4 @@
-// Phase 2b hook wiring. Each hook runs the ordered scripts through
+// Hook wiring. Each hook runs the ordered scripts through
 // the QuickJS sandbox and returns the rewritten value plus per-script
 // errors and changed states (for the pipeline to persist).
 //

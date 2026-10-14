@@ -10,7 +10,7 @@
   file-backed better-sqlite3 for local Node. One `./drizzle` migration
   history serves D1 (`wrangler d1 migrations apply`), local dev
   (`--local`), and tests (better-sqlite3 migrator on `:memory:`).
-- **pnpm workspaces, Node 22, TypeScript only.** No default LLM provider
+- **pnpm workspaces, Node 24, TypeScript only.** No default LLM provider
   or model anywhere in the repo.
 
 ## Data model summary
@@ -446,7 +446,7 @@ Two supported paths (README has the full steps):
   `pnpm deploy` (builds everything, then
   `wrangler deploy --env production`). Production sets
   `NODE_ENV=production` for the strict CSP.
-- **Node self-host**: Node 22 + a writable SQLite path;
+- **Node self-host**: Node 24 + a writable SQLite path;
   `DB_DRIVER=local DB_PATH=... SESSION_SECRET=...`, `pnpm -r build`,
   then `node apps/api/dist/node.js` (`apps/api/src/node.ts`: same Hono
   app on better-sqlite3 via `@hono/node-server`, `PORT` default 8787,
@@ -694,6 +694,14 @@ state has one primary action and one secondary path.
 - **Lists**: `/stories` tabs (Playing/Completed/Drafts) with
   per-tab empty states; completion toggles via the drawer Story
   section (`PATCH { completedAt }`, migration 0006).
+
+## Code comment conventions
+
+- Comments explain WHY, not WHAT.
+- Never reference build phases, specs, or prompts.
+- Never narrate change history in comments — that is what git history
+  and CHANGELOG are for.
+- TODOs and FIXMEs live in docs/TECH_DEBT.md, not scattered in source.
 
 ## Frozen decisions — do NOT change without a PROGRESS.md entry
 

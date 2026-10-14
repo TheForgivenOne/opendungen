@@ -1,4 +1,4 @@
-// Two-screen new-story flow (Phase 6b): scenario list, then the name field.
+// Two-screen new-story flow: scenario list, then the name field.
 
 import { useState, type FormEvent } from "react";
 import { errorMessage } from "../../api/client";
@@ -8,7 +8,7 @@ import { defaultScenarioId, ScenarioList } from "../../scenario-list";
 import { FANTASY_SCENARIO_ID } from "../wizard";
 import { ErrorText, Skeleton, inputClass } from "../../ui";
 
-// Two-screen new-story flow (Phase 6b): a single-column scenario list,
+// Two-screen new-story flow: a single-column scenario list,
 // then one centered name field. Top-level routes, no grid, no modal.
 // The list selection travels in sessionStorage (the name screen reads
 // it; a direct visit falls back to the fantasy default).

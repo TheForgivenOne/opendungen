@@ -1,4 +1,4 @@
-// Ctrl+Up / Ctrl+Down input history (Phase 6b): cycle the last 50
+// Ctrl+Up / Ctrl+Down input history: cycle the last 50
 // input actions of the current story in the textarea. Pure cursor
 // helpers so the stepping is unit-testable; the story view owns the
 // history array (read from its actions) and the textarea state.

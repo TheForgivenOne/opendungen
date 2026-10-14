@@ -49,7 +49,7 @@ describe("node entry point", () => {
         await new Promise((resolve) => setTimeout(resolve, 100));
       }
     }
-    expect(health).toMatchObject({ ok: true, service: "opendungen", version: "0.0.0" });
+    expect(health).toMatchObject({ ok: true, service: "opendungen", version: "0.1.0" });
   });
 
   it("reports ready when the database answers", async () => {

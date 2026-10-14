@@ -156,7 +156,7 @@ export function ProviderFields({
 
   function setKind(kind: ProviderKind) {
     // Keep a user-typed label; refresh an untouched (empty) or
-    // previously suggested label so it matches the new kind.
+    // auto-suggested label so it matches the new kind.
     const baseUrl =
       providerNeedsBaseUrl(kind) && !form.baseUrl
         ? kind === "ollama"

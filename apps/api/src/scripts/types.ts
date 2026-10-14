@@ -33,10 +33,6 @@ export interface ContextPayload {
   cards: string[];
 }
 
-export interface OutputPayload {
-  text: string;
-}
-
 export interface HistoryEntry {
   type: string;
   text: string;
@@ -52,8 +48,9 @@ export interface RunHookOptions<T> {
   seed?: string;
   timeoutMs?: number;
   memoryLimitBytes?: number;
-  // Server debug log sink. Defaults to console.debug; tests inject a
-  // capture. Script source and state are never logged here.
+  // Server debug log sink. Defaults to the structured logger at
+  // debug level; tests inject a capture. Script source and state are
+  // never logged here.
   logger?: (message: string) => void;
 }
 
